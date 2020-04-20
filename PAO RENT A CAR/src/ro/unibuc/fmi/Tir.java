@@ -16,6 +16,6 @@ public class Tir extends Vehicle{
     @Override
     public void Buna()
     {
-        System.out.println("Sunt TIR cu capacitatea de :"+capacitate+"tone"+",pret= " + super.getPret() + ", combustibil= " + super.getCombustibil() + "km, An fabricatie= " + super.getAn_fabricatie());
+        System.out.println("Sunt TIR cu capacitatea de: "+capacitate+"tone"+",pret= " + super.getPret() + ", combustibil= " + super.getCombustibil() + "km, An fabricatie= " + super.getAn_fabricatie());
     }
 }

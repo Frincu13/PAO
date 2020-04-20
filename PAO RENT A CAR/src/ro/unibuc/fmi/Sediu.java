@@ -16,6 +16,12 @@ public class Sediu {//Service pentru firma
         this.customers = customer;
 
     }
+
+    public VehicleService colectie()
+    {
+        return vehicleService;
+    }
+
     public Set<Customer> getCustomer() {
         return customers;
     }

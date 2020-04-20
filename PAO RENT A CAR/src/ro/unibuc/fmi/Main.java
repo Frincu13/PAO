@@ -9,7 +9,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Alex Rent A Vehicle.SRL");
         Sediu sediu = new Sediu();
-
+        ReadnWrite readnWrite = ReadnWrite.getInstance();
+        readnWrite.readVehiclesFromFile(sediu);
+        Audit audit= Audit.getInstance();
         Scanner scan = new Scanner(System.in);
         System.out.println("Ce doriti sa faceti?\n" +
                 "1) Adauga vehicul\n" +
@@ -31,6 +33,7 @@ public class Main {
 
             switch (t) {
                 case 1:
+                    audit.writePersonsToFile("Am adaugat o masina");
                     System.out.println("Ce vehicul vreti sa adaugam?\n" +
                             "1) Masina\n" +
                             "2) Tir\n" +
@@ -90,17 +93,21 @@ public class Main {
                     }
                     break;
                 case 2:
+                    audit.writePersonsToFile("Am afisat vehiculele");
                     sediu.displayVehicles();
                     break;
                 case 3:
+                    audit.writePersonsToFile("Am afisat vehiculele ce trebuie realimentate");
                     sediu.displayEmptyVehicles();
                     break;
                 case 4:
+                    audit.writePersonsToFile("Am alimentat vehiculele");
                     System.out.println("Cu cati km alimentam? ");
                     int km = scan.nextInt();
                     sediu.IncarcaVehicles(km);
                     break;
                 case 5:
+                    audit.writePersonsToFile("Am avut un client");
                     System.out.println("Numele clientului: ");
                     String nume=scan.next();
                     System.out.println("Cati km doreste sa mearga: ");
@@ -118,18 +125,23 @@ public class Main {
                     sediu.Inchiriaza(t3,kilo,nume);
                     break;
                 case 6:
+                    audit.writePersonsToFile("Am vizualizat clientii");
                     sediu.displayCustomers();
                     break;
                 case 7:
+                    audit.writePersonsToFile("Am cautat clientul cel mai loial");
                     sediu.displayBestCustomers();
                     break;
                 case 8:
+                    audit.writePersonsToFile("Am afisat cel mai scump vehicul");
                     sediu.displayBilzerianVehicles();
                     break;
                 case 9:
+                    audit.writePersonsToFile("Am afisat valoarea flotei");
                     sediu.displayGatesVehicles();
                     break;
                 case 10:
+                    audit.writePersonsToFile("Am afisat cea m ai ieftina barca");
                     sediu.displayPretBarcaSaracie();
                     break;
                 case 11:
@@ -156,5 +168,6 @@ public class Main {
 
         }while (t!=0) ;
         sediu.displayVehicles();
+        readnWrite.writeVehiclesToFile(sediu.colectie());
     }
 }
