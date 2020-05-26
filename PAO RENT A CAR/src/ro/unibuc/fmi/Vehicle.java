@@ -1,21 +1,35 @@
 package ro.unibuc.fmi;
 
-public abstract class Vehicle implements Comparable{
-    private int tiuprile;
+public abstract class Vehicle implements Comparable {
+    private int nrUnic;
+    private int tip;
     private int pret;
     private int combustibil;
-    private int an_fabricatie;
+    private int anFabricatie;
     private boolean disponibilitate;
 
-    public Vehicle(int pret, int combustibil, int an_fabricatie,int tiuprile) {
-        this.tiuprile=tiuprile;
+    public Vehicle() {
+        this.nrUnic=0;
+        this.tip = 0;
+        this.pret = 0;
+        this.combustibil = 0;
+        this.anFabricatie=0;
+        this.disponibilitate=false;
+        if (combustibil > 0) {
+            this.disponibilitate = true;
+        }
+    }
+
+    public Vehicle(int pret, int combustibil, int anFabricatie, int tip,int nrUnic) {
+        this.nrUnic=nrUnic;
+        this.tip = tip;
         this.pret = pret;
         this.combustibil = combustibil;
-        this.an_fabricatie = an_fabricatie;
-        if(combustibil>0)
-         this.disponibilitate=true;
-        else
-            this.disponibilitate=false;
+        this.anFabricatie=anFabricatie;
+        this.disponibilitate=false;
+        if (combustibil > 0) {
+            this.disponibilitate = true;
+        }
     }
 
 
@@ -23,28 +37,28 @@ public abstract class Vehicle implements Comparable{
         this.pret = pret;
     }
 
-    public void setAn_fabricatie(int an_fabricatie) {
-        this.an_fabricatie =an_fabricatie ;
+    public void setAnfabricatie(int anFabricatie) {
+        this.anFabricatie = anFabricatie;
     }
 
     public void setCombustibil(int combustibil) {
-        this.combustibil=combustibil;
+        this.combustibil = combustibil;
     }
 
     public void setDisponibilitate(boolean disponibilitate) {
-        this.disponibilitate=disponibilitate;
+        this.disponibilitate = disponibilitate;
     }
 
-    public void setTiuprile(int tiuprile) {
-        this.tiuprile =tiuprile ;
+    public void setTiuprile(int tip) {
+        this.tip = tip;
     }
 
     public int getPret() {
         return pret;
     }
 
-    public int getAn_fabricatie() {
-        return an_fabricatie;
+    public int getAnFabricatie() {
+        return anFabricatie;
     }
 
     public int getCombustibil() {
@@ -55,7 +69,16 @@ public abstract class Vehicle implements Comparable{
         return disponibilitate;
     }
 
-    public int getTiuprile() { return tiuprile;
+    public int getTiuprile() {
+        return tip;
+    }
+
+    public int getNrUnic() {
+        return nrUnic;
+    }
+
+    public void setNrUnic(int nrUnic) {
+        this.nrUnic = nrUnic;
     }
 
     public abstract void Buna();

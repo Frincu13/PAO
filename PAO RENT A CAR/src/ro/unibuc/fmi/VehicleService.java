@@ -4,7 +4,7 @@ import java.util.*;
 
 public class VehicleService {//service prelucarea masini
 
-    private LinkedList<Vehicle> vehicles;
+    private List<Vehicle> vehicles;
     private int size;
 
     public VehicleService() {
@@ -13,18 +13,16 @@ public class VehicleService {//service prelucarea masini
     }
 
 
-    public VehicleService(LinkedList<Vehicle> vehicles,int size) {
+    public VehicleService(List<Vehicle> vehicles,int size) {
         this.vehicles = vehicles;
         this.size=size;
     }
 
-    public LinkedList<Vehicle> getVehicles() {
+    public List<Vehicle> getVehicles() {
         return vehicles;
     }
 
-    /*public List<Vehicle> sortVehicles() {
-        return Collections.sort(vehicles);
-    }*/
+
     public int getSize() {
         return size;
     }

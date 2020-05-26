@@ -2,8 +2,8 @@ package ro.unibuc.fmi;
 
 public class Motocicleta extends Vehicle{
     private int putere;//500cc...
-    public Motocicleta(int pret, int combustibil, int an_fabricatie,int tiuprile,int putere) {
-        super(pret, combustibil, an_fabricatie,tiuprile);
+    public Motocicleta(int pret, int combustibil, int an_fabricatie,int tiuprile,int putere,int nrUnic) {
+        super(pret, combustibil, an_fabricatie,tiuprile,nrUnic);
         this.putere=putere;
     }
 
@@ -17,6 +17,6 @@ public class Motocicleta extends Vehicle{
     @Override
     public void Buna()
     {
-        System.out.println("Sunt MOTOCICLETA de putere:"+putere+",pret= " + super.getPret() + ", combustibil= " + super.getCombustibil() + "km, An fabricatie= " + super.getAn_fabricatie());
+        System.out.println("Sunt MOTOCICLETA de putere:"+putere+",pret= " + super.getPret() + ", combustibil= " + super.getCombustibil() + "km, An fabricatie= " + super.getAnFabricatie()+", Numar unic= " + super.getNrUnic());
     }
 }

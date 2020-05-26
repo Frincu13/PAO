@@ -2,8 +2,12 @@ package ro.unibuc.fmi;
 
 public class Aeronava extends Vehicle{
     private String type;//Private Jet, Elicopter...
-    public Aeronava(int pret, int combustibil, int an_fabricatie,int tiuprile,String type ){
-        super(pret, combustibil, an_fabricatie,tiuprile);
+    public Aeronava(){
+        super();
+        this.type="";
+    }
+    public Aeronava(int pret, int combustibil, int an_fabricatie,int tiuprile,String type,int nrUnic){
+        super(pret, combustibil, an_fabricatie,tiuprile,nrUnic);
         this.type=type;
     }
 
@@ -16,7 +20,7 @@ public class Aeronava extends Vehicle{
     @Override
     public void Buna()
     {
-        System.out.println("Sunt "+type+",pret= " + super.getPret() + ", combustibil= " + super.getCombustibil() + "km, An fabricatie= " + super.getAn_fabricatie());
+        System.out.println("Sunt "+type+",pret= " + super.getPret() + ", combustibil= " + super.getCombustibil() + "km, An fabricatie= " + super.getAnFabricatie()+", Numar unic= " + super.getNrUnic());
     }
 
 }
